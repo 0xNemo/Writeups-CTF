@@ -8,14 +8,14 @@
 
 ### Analyse
 
-Récupération du fichier `not-so-fat.dd` que nous allons analyser rapidement pour comprendre ce que c'est, même si l'extension nous indique qu'il s'agit d'une images/image disque.
+Récupération du fichier `not-so-fat.dd` que nous allons analyser rapidement pour comprendre ce que c'est, même si l'extension nous indique qu'il s'agit d'une image disque.
 
 | commande | Sortie | Analyse |
 |:-------- |:--------:| --------:|
 |`file not-so-fat.dd`| `not-so-fat.dd: DOS/MBR boot sector, code offset 0x3c+2, OEM-ID "mkfs.fat", sectors/cluster 4, reserved sectors 4, root entries 512, sectors 32768 (volumes <=32 MB), Media descriptor 0xf8, sectors/FAT 32, sectors/track 32, heads 64, serial number 0x3be84c04, unlabeled, FAT (16 bit)` | Le fichier semble être un disque, le formatage aurait été fait sous Linux `mkfs.fat` et avec un filesystem FAT16|
 |`fsstat not-so-fat.dd`| `File System Type: FAT16 OEM Name: mkfs.fat` | confirme le type de FS |
 
-On monte l'images/image disque et on voit que le disque ne contient pas de fichier :
+On monte l'image disque et on voit que le disque ne contient pas de fichier :
 
 ![alt text](images/image.png)
 
